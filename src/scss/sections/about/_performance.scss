@@ -1,0 +1,17 @@
+.performance {
+  @include about-contact-Data;
+}
+
+@media screen and (max-width: 1000px) {
+  .performance {
+    .row {
+      .perform-img {
+        justify-content: center !important;
+        margin-bottom: 25px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.provide {
+  .title {
+    font-family: "Quicksand", sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 23px;
+    color: $blueGrey;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 45%;
+      width: 10%;
+      height: 3px;
+      background-color: $lightGreen;
+    }
+  }
+  .row {
+    padding: 0 60px;
+    .provide-card {
+      border: 1px solid $borderGrey;
+      border-radius: 15px;
+      padding: 50px 30px;
+      transition: 0.3s;
+      h4 {
+        font-family: "Quicksand", sans-serif;
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 1.2;
+        a {
+          color: $blueGrey;
+        }
+      }
+      p {
+        font-family: "Lato", sans-serif;
+        font-size: 14px;
+        line-height: 24px;
+        color: $lightGrey;
+      }
+      &:hover {
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+    .provide {
+      .title {
+        font-size: 30px;
+      }
+      .row {
+        padding: 0;
+        .provide-card {
+          img {
+            width: 100px;
+          }
+          h4 {
+            font-size: 25px;
+          }
+          p {
+            font-size: 16px;
+          }
+          .more-btn {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+}

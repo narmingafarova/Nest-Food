@@ -1,0 +1,125 @@
+.deals-day {
+  .deals-title {
+    font-family: "Quicksand", sans-serif;
+    h3 {
+      @include sectionTitles;
+    }
+  }
+  .deals-card {
+    position: relative;
+    transition: 0.5s;
+    .deals-img {
+      width: 100%;
+      img {
+        width: 100%;
+        border-radius: 15px;
+      }
+    }
+    .deals-content {
+      width: 85%;
+      position: absolute;
+      top: 40%;
+      left: 7%;
+      transition: 0.5s;
+      .deals-time {
+        li {
+          font-family: "Lato", sans-serif;
+          font-size: 14px;
+          background-color: #fff;
+          padding: 10px;
+          border-radius: 4px;
+          color: $lightGrey;
+          span {
+            font-family: "Quicksand", sans-serif;
+            font-weight: 600;
+            color: $green;
+          }
+        }
+      }
+      .deals-info {
+        padding: 25px 20px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+        background-color: #fff;
+        border-radius: 10px;
+        h4 {
+          font-family: "Quicksand", sans-serif;
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 1.2;
+          a {
+            transition: 0.5s;
+            color: $blueGrey;
+          }
+          &:hover {
+            a {
+              color: $green;
+            }
+          }
+        }
+        .deals-rate {
+          ul {
+            li {
+              line-height: 8px;
+              color: #aeaeae;
+              &:last-child {
+                font-size: 11px;
+                margin: 2px 0 0 5px;
+              }
+            }
+          }
+        }
+        .store {
+          font-family: "Lato", sans-serif;
+          font-size: 12px;
+          line-height: 26px;
+          color: #b6b6b6;
+          a {
+            color: $green;
+            transition: 0.5s;
+            &:hover {
+              color: $yellow;
+            }
+          }
+        }
+        .prices-add {
+          font-family: "Quicksand", sans-serif;
+          .disc-price {
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: underline;
+            color: $green;
+          }
+          .gen-price {
+            font-size: 11px;
+            text-decoration: line-through;
+            color: #adadad;
+          }
+          button {
+            font-size: 9px;
+            font-weight: 700;
+            border-radius: 4px;
+            color: $darkGreen;
+            background-color: #def9ec;
+            transition: 0.5s;
+            &:hover {
+              transform: translateY(-3px);
+            }
+          }
+        }
+      }
+    }
+    &:hover {
+      .deals-content {
+        transform: translateY(-5%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .deals-day {
+    .deals-card {
+      margin-bottom: 120px;
+    }
+  }
+}

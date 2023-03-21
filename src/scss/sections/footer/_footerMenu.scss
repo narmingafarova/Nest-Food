@@ -1,0 +1,125 @@
+.footer-menu {
+  border-bottom: 1px solid $borderGrey;
+  padding-bottom: 30px;
+  .foot-col {
+    .foot-content {
+      h4 {
+        font-size: 13px;
+        line-height: 20px;
+        color: $blueGrey;
+      }
+      .app-google {
+        color: $lightGrey;
+      }
+      .title {
+        font-family: "Quicksand", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: $blueGrey;
+      }
+      .foot-contact {
+        @include contactInfo;
+        .contact-info-list {
+          li {
+            a {
+              font-family: "Lato", sans-serif;
+              font-size: 12px;
+              line-height: 20px;
+              color: $blueGrey;
+              transition: 0.5s;
+            }
+            &:hover {
+              a {
+                color: $green;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.sub-footer {
+  .sub-footer-items {
+    .copyright {
+      width: 33%;
+      font-family: "Lato", sans-serif;
+      font-size: 13px;
+      line-height: 20px;
+      color: $lightGrey;
+    }
+    .sub-footer-contact {
+      width: 33%;
+      .sub-contact {
+        @include support;
+        img {
+          opacity: 0.5;
+        }
+      }
+    }
+    .social {
+      width: 33%;
+      .social-icons {
+        h6 {
+          font-family: "Quicksand", sans-serif;
+          font-size: 13px;
+          font-weight: 700;
+          color: $blueGrey;
+        }
+        a {
+          padding: 7px;
+          border-radius: 100%;
+          background-color: $green;
+        }
+      }
+      p {
+        font-family: "Lato", sans-serif;
+        font-size: 13px;
+        line-height: 20px;
+        color: $lightGrey;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .payment-img {
+    img {
+      width: 40%;
+    }
+  }
+  .sub-footer {
+    .sub-footer-items {
+      .copyright {
+        text-align: center;
+        width: 45%;
+        margin-bottom: 20px;
+      }
+      .sub-footer-contact {
+        display: none !important;
+      }
+      .social {
+        align-items: center !important;
+        width: 45%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .sub-footer {
+    .sub-footer-items {
+      .copyright {
+        width: 100%;
+      }
+      .sub-footer-contact {
+        display: none !important;
+      }
+      .social {
+        width: 100%;
+      }
+    }
+  }
+}

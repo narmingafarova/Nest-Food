@@ -1,0 +1,164 @@
+@mixin sectionTitles {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 30px;
+  color: $blueGrey;
+}
+
+@mixin form {
+  form {
+    font-family: "Quicksand", sans-serif;
+    position: relative;
+    width: 400px;
+    margin-bottom: 30px;
+    input {
+      font-size: 13px;
+      line-height: 18px;
+      border: 0;
+      padding: 0 30px;
+      border-radius: 50px;
+      width: 100%;
+      height: 50px;
+      &:focus-visible {
+        outline: 0;
+      }
+    }
+    .submit-btn {
+      position: absolute;
+      width: auto;
+      right: 0;
+      color: #fff;
+      background-color: $green;
+      transition: 0.5s;
+      &:hover {
+        background-color: $darkGreen;
+      }
+    }
+  }
+}
+
+@mixin support {
+  .support-center {
+    a {
+      font-size: 22px;
+      font-weight: 700;
+      color: $green;
+      transition: 0.5s;
+      &:hover {
+        color: $yellow;
+      }
+    }
+    span {
+      font-family: "Lato", sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.9px;
+      color: $lightGrey;
+    }
+  }
+}
+
+@mixin productCard {
+  .product-card {
+    position: relative;
+    .product-details {
+      padding: 0 15px;
+      h4 {
+        font-family: "Quicksand", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.2;
+        a {
+          transition: 0.5s;
+          color: $blueGrey;
+        }
+        &:hover {
+          a {
+            color: $green;
+          }
+        }
+      }
+      .product-rate {
+        ul {
+          li {
+            line-height: 8px;
+            color: #aeaeae;
+            &:last-child {
+              font-size: 11px;
+              margin: 2px 0 0 5px;
+            }
+          }
+        }
+      }
+      .prices-add {
+        font-family: "Quicksand", sans-serif;
+        .disc-price {
+          font-size: 15px;
+          font-weight: 700;
+          text-decoration: underline;
+          color: $green;
+        }
+        .gen-price {
+          font-size: 11px;
+          text-decoration: line-through;
+          color: #adadad;
+        }
+      }
+    }
+  }
+}
+
+@mixin about-contact-Data {
+  h4 {
+    font-family: "Quicksand", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: $green;
+  }
+  .title {
+    font-family: "Quicksand", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    color: $blueGrey;
+  }
+  p {
+    font-family: "Lato", sans-serif;
+    max-width: 500px;
+    font-size: 14px;
+    line-height: 25px;
+    color: $lightGrey;
+  }
+}
+
+@mixin contactInfo {
+  .contact-info {
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    color: $blueGrey;
+    strong {
+      font-family: "Quicksand", sans-serif;
+      font-weight: 600;
+    }
+    .contact-data {
+      color: $green;
+      transition: 0.5s;
+      &:hover {
+        color: $yellow;
+      }
+    }
+    img {
+      transition: 0.5s;
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+    .payment {
+      font-size: 13px;
+      line-height: 20px;
+      color: $blueGrey;
+    }
+  }
+}

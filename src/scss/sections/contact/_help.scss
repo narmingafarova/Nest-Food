@@ -1,0 +1,39 @@
+.help {
+  .help-data {
+    @include about-contact-Data;
+    p {
+      font-size: 13px;
+      line-height: 23px;
+    }
+  }
+  .help-cards {
+    .help-card {
+      @include about-contact-Data;
+      .title {
+        font-size: 16px;
+      }
+      p {
+        font-size: 13px;
+        line-height: 23px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .help {
+    .row {
+      padding: 0 !important;
+      .help-cards {
+        .help-card {
+          .title {
+            font-size: 18px;
+          }
+        }
+        .col-md-12 {
+          flex-direction: column !important;
+        }
+      }
+    }
+  }
+}

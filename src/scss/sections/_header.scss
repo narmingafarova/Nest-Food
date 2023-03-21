@@ -1,0 +1,142 @@
+.header {
+  border-bottom: 1px solid $borderGrey;
+  form {
+    border: 1px solid $lightGreen;
+    border-radius: 4px;
+    width: 40%;
+    position: relative;
+    .form-control {
+      font-family: "Lato", sans-serif;
+      height: 40px;
+      font-size: 11px;
+      font-style: italic;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    button {
+      font-family: "Quicksand", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      height: 33px;
+      padding: 0 20px;
+      border-radius: 3px;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 3px;
+      background-color: $green;
+      transition: 0.3s;
+      border: 0;
+      &:hover {
+        background-color: $yellow;
+      }
+    }
+  }
+  .profile-menu {
+    .vendor {
+      font-family: "Quicksand", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 26px;
+      letter-spacing: 0.5px;
+      color: $green;
+      background-color: #fff;
+      border: 1px solid $borderGrey;
+      border-radius: 5px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+      padding: 6px 18px 6px 13px;
+      transition: 0.3s;
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+    .nav-link {
+      font-family: "Lato", sans-serif;
+      font-size: 13px;
+      color: $lightGrey;
+      border: 0;
+    }
+    .card {
+      position: relative;
+    }
+    .card-item {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 25%;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      color: #fff;
+      background-color: $green;
+      border-radius: 100%;
+    }
+  }
+}
+
+.head-menu {
+  font-family: "Quicksand", sans-serif;
+  border-bottom: 1px solid $borderGrey;
+  top: 0;
+  z-index: 4;
+  .nav-link,
+  .menu-item {
+    font-size: 13px;
+    font-weight: 600;
+    color: $blueGrey;
+  }
+  .dropdown-menu {
+    border: 1px solid $borderGrey;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+    .dropdown-item {
+      font-size: 10px;
+      font-weight: 600;
+      transition: 0.5s;
+      margin-bottom: 4px;
+      &:hover {
+        color: $green;
+        background-color: transparent;
+      }
+    }
+  }
+  .nav-link {
+    transition: 0.6s;
+    &:hover {
+      color: $green;
+    }
+  }
+  .browse-all {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 38px;
+    padding: 2px 20px;
+    border-radius: 5px;
+    background-color: $green;
+    transition: 0.3s;
+    &:hover {
+      background-color: $darkGreen;
+    }
+  }
+  @include support;
+}
+
+@media screen and (max-width: 992px) {
+  .header {
+    .navbar-collapse {
+      form {
+        margin: 0 auto 20px;
+      }
+      .profile-menu {
+        width: 40%;
+        margin: 0 auto;
+        text-align: center;
+        .card-item {
+          left: 42%;
+        }
+      }
+    }
+  }
+}

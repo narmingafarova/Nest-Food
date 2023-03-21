@@ -1,0 +1,50 @@
+.opportunities-card {
+  margin-bottom: 50px;
+  .opp-card {
+    background-color: #f4f6fa;
+    border-radius: 10px;
+    width: 19%;
+    img {
+      transition: 0.3s;
+    }
+    .opp-text {
+      width: 70%;
+      h6 {
+        font-family: "Quicksand", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        a {
+          color: #242424;
+        }
+      }
+      span {
+        font-family: "Lato", sans-serif;
+        font-size: 12px;
+        line-height: 20px;
+        color: #adadad;
+      }
+    }
+    &:hover {
+      img {
+        transform: translateY(-3px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .opportunities-card {
+    .opp-card {
+      width: 32%;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .opportunities-card {
+    .opp-card {
+      width: 100%;
+      justify-content: start !important;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.top-header {
+  font-family: "Lato", sans-serif;
+  border-bottom: 1px solid $borderGrey;
+  padding: 5px 0;
+  .top-nav {
+    .nav-link,
+    span,
+    .dropdown-item {
+      font-size: 11px;
+      font-weight: 500;
+      color: $lightGrey;
+    }
+    .top-tel {
+      color: $green;
+    }
+    .dropdown {
+      a {
+        padding: 0 8px;
+      }
+    }
+    .border-line {
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 70%;
+        transform: translateY(20%);
+        background-color: #dedfe2;
+      }
+    }
+    .nav-link {
+      transition: 0.3s;
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+  .midtext {
+    a {
+      font-size: 12px;
+      font-weight: 600;
+      color: $green;
+      transition: 0.3s;
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .top-header {
+    display: none;
+  }
+}

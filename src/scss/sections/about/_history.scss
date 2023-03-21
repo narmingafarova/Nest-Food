@@ -1,0 +1,81 @@
+.history {
+  .row {
+    padding: 0 60px;
+    .title {
+      font-family: "Quicksand", sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 26px;
+      color: $blueGrey;
+    }
+    p {
+      font-family: "Lato", sans-serif;
+      font-size: 13px;
+      line-height: 22px;
+      color: $lightGrey;
+    }
+  }
+  .numbers {
+    background-image: url("https://themepanthers.com/wp/nest/d1/wp-content/uploads/2022/05/about-9.png");
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+    border-radius: 20px;
+    .bg-overlay {
+      border-radius: 20px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #4b675a;
+      opacity: 0.9;
+      z-index: 1;
+    }
+    .num-item {
+      font-family: "Quicksand", sans-serif;
+      color: #fff;
+      z-index: 2;
+      p {
+        font-size: 55px;
+        font-weight: 700;
+        line-height: 57px;
+      }
+      span {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .history {
+      .row {
+        padding: 0;
+        .title {
+          font-size: 30px;
+        } 
+        p {
+          font-size: 15px;
+        }
+      }
+      .numbers {
+        flex-direction: column;
+        .num-item {
+          p {
+            font-size: 60px;
+          }
+          span {
+            font-size: 25px;
+          }
+          &:not(:last-child) {
+            padding-bottom: 30px;
+          }
+        }
+      }
+    }
+}

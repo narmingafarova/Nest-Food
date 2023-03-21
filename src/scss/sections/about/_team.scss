@@ -1,0 +1,68 @@
+.team {
+  @include about-contact-Data;
+  margin-bottom: 100px;
+  .row {
+    padding: 0 55px;
+    .team-card {
+      img {
+        border-radius: 10px;
+      }
+    }
+    .team-info {
+      width: 60%;
+      background-color: #fff;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+      border-radius: 15px;
+      padding: 20px;
+      bottom: -20%;
+      left: 20%;
+      .name {
+        font-family: "Quicksand", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: $blueGrey;
+      }
+      p {
+        font-family: "Lato", sans-serif;
+        font-size: 14px;
+        line-height: 24px;
+        color: $lightGrey;
+      }
+      ul {
+        margin-top: 15px;
+        li {
+          a {
+            color: $green;
+            transition: 0.5s;
+            &:hover {
+              color: $yellow;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .team {
+    margin-bottom: 20px;
+    .row {
+      .about-data {
+        margin-bottom: 20px;
+      }
+      .team-card {
+        margin-bottom: 120px;
+        img {
+          width: 100%;
+        }
+      }
+      .team-info {
+        width: 80%;
+        bottom: -15%;
+        left: 10%;
+      }
+    }
+  }
+}
