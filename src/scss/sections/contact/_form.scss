@@ -1,0 +1,77 @@
+.contact-form {
+  @include about-contact-Data;
+  span {
+    font-family: "Lato", sans-serif;
+    font-size: 13px;
+    line-height: 24px;
+    color: $lightGrey;
+  }
+  form {
+    font-family: "Lato", sans-serif;
+    font-size: 13px;
+    line-height: 24px;
+    color: $lightGrey;
+    input {
+      width: 45%;
+      height: 52px;
+      padding: 0 20px;
+      border: 1px solid $borderGrey;
+      border-radius: 10px;
+      &:focus-visible {
+        outline: 0;
+      }
+    }
+    textarea {
+      width: 91%;
+      padding: 10px 20px;
+      border: 1px solid $borderGrey;
+      border-radius: 10px;
+      &:focus-visible {
+        outline: 0;
+      }
+    }
+    button {
+      width: 91%;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 15px 40px;
+      background-color: $green;
+      border: 1px solid $green;
+      border-radius: 10px;
+      transition: 0.5s;
+      &:hover {
+        background-color: $darkGreen;
+        border: 1px solid $darkGreen;
+      }
+    }
+  }
+  .form-img {
+    img {
+      border-radius: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .contact-form {
+    .row {
+      padding: 0 !important;
+      margin: 0 !important;
+      form {
+        input, textarea {
+            width: 100%;
+            margin-right: 0 !important;
+        }
+        button {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+      }
+      .form-img {
+        img {
+            width: 100%;
+        }
+      }
+    }
+  }
+}
