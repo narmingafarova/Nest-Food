@@ -6,8 +6,10 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Recycle, Heart, Cart, Person, ArrowRight, ChevronDown, Fire, Headset } from 'react-bootstrap-icons';
 import appSvg from '../assets/img/apps.svg';
 import { LinkContainer } from 'react-router-bootstrap';
+import { useCart } from 'react-use-cart';
 
 function Header() {
+    const {totalItems} = useCart();
     return (
         <>
             <Navbar bg="white" expand="lg" className='header py-4'>
@@ -25,10 +27,12 @@ function Header() {
                             <a href="/" className="vendor d-flex align-items-center justify-content-center text-decoration-none me-3">Became Vendor &nbsp; <ArrowRight /></a>
                             <Nav.Link href="/" className='d-flex align-items-center justify-content-center'><Recycle fontSize={18} color={"$black"} className="me-1" /> Compare</Nav.Link>
                             <Nav.Link href="/" className='d-flex align-items-center justify-content-center'><Heart fontSize={18} color={"$black"} className="me-1" /> Wishlist</Nav.Link>
-                            <Nav.Link href="/" className='d-flex align-items-center justify-content-center flex-row card'>
-                                <Cart fontSize={18} color={"$black"} className="me-3 border-0" /> Cart
-                                <span className='card-item'>0</span>
-                            </Nav.Link>
+                            <LinkContainer to="/cart">
+                                <Nav.Link className='d-flex align-items-center justify-content-center flex-row card'>
+                                    <Cart fontSize={18} color={"$black"} className="me-3 border-0" /> Cart
+                                    <span className='card-item'>{totalItems}</span>
+                                </Nav.Link>
+                            </LinkContainer>
                             <Nav.Link href="/" className='d-flex align-items-center justify-content-center'><Person fontSize={20} color={"$black"} className="me-1" /> Account</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
@@ -53,7 +57,9 @@ function Header() {
                             <LinkContainer to="/about">
                                 <Nav.Link className='me-2'>About</Nav.Link>
                             </LinkContainer>
-                            <Nav.Link href="/" className='me-2'>Shop</Nav.Link>
+                            <LinkContainer to='/shop'>
+                                <Nav.Link className='me-2'>Shop</Nav.Link>
+                            </LinkContainer>
                             <NavDropdown title="Vendors" id="basic-nav-dropdown" className='me-2'>
                                 <NavDropdown.Item href="/">Dashboard</NavDropdown.Item>
                                 <NavDropdown.Item href="/">Store Listing</NavDropdown.Item>

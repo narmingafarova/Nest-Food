@@ -1,0 +1,66 @@
+.add-table {
+  table {
+    thead {
+      tr {
+        background-color: #f4f6fa;
+        border-collapse: collapse;
+        border-radius: 20px;
+      }
+      th {
+        font-family: "Quicksand", sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        color: $blueGrey;
+        padding: 15px 20px;
+        border: 0px !important;
+        &:first-child {
+          border-radius: 20px 0 0 20px;
+        }
+        &:last-child {
+            border-radius: 0 20px 20px 0;
+        }
+      }
+    }
+    tbody {
+      tr {
+        border-bottom: 1px solid $borderGrey;
+        td {
+          font-family: "Lato", sans-serif;
+          font-size: 13px;
+          font-weight: 500;
+          line-height: 45px;
+          color: $lightGrey;
+          padding: 15px 20px;
+          a {
+            font-family: "Quicksand", sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: $green;
+          }
+          .delete-btn {
+            font-family: "Quicksand", sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 21px;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            color: red;
+            border-radius: 30px;
+            border: 1px solid $borderGrey;
+            text-align: center;
+            transition: 0.5s;
+            &:hover {
+              background-color: $green;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    td {
+      border-bottom: 0;
+      padding: 15px 20px;
+    }
+  }
+}

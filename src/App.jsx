@@ -7,20 +7,27 @@ import Home from './pages/Home'
 import MainFooter from './components/footer/MainFooter'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Shop from './pages/Shop'
+import Cart from './pages/Cart'
+import { CartProvider } from 'react-use-cart'
 
 const App = () => {
   return (
     <BrowserRouter>
-      <ProductProvider>
-        <TopHeader />
-        <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact />} />
-        </Routes>
-        <MainFooter />
-      </ProductProvider>
+      <CartProvider>
+        <ProductProvider>
+          <TopHeader />
+          <Header />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/shop' element={<Shop />} />
+            <Route path='/cart' element={<Cart />} />
+          </Routes>
+          <MainFooter />
+        </ProductProvider>
+      </CartProvider>
     </BrowserRouter>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import BreadCrumb from '../components/about/BreadCrumb'
+import BreadCrumb from '../components/BreadCrumb'
 import HeroAbout from '../components/about/HeroAbout'
 import History from '../components/about/History'
 import Performance from '../components/about/Performance'
@@ -9,7 +9,7 @@ import Team from '../components/about/Team'
 const About = () => {
     return (
         <>
-            <BreadCrumb />
+            <BreadCrumb title="About" />
             <HeroAbout />
             <Provide />
             <Performance />

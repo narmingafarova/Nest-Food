@@ -26,7 +26,11 @@
 // Contact Page
 @import "./sections/contact/help";
 @import "./sections/contact/address";
-@import './sections/contact/form';
+@import "./sections/contact/form";
+
+// Add To Cart Page
+@import "./sections/addcart/addCartCrumb";
+@import "./sections/addcart/addTable";
 
 // Footer
 @import "./sections/footer/shop";

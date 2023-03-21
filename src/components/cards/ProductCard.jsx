@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { Button, Col } from 'react-bootstrap'
 import { Cart, Star } from 'react-bootstrap-icons'
+import { useCart } from 'react-use-cart'
 // import { ProductContext } from '../context/ProductContext'
 
 const ProductCard = ({ allData, frontImage, backImage, category, title, store, price, discount }) => {
+    const {addItem} = useCart();
     // const [products] = useContext(ProductContext);
     const [img, setImg] = useState(frontImage);
     // const [proPercent, setPropercent] = useState("");
@@ -38,7 +40,9 @@ const ProductCard = ({ allData, frontImage, backImage, category, title, store, p
                             <div className="disc-price me-2">${discount}</div>
                             <div className="gen-price">${price}</div>
                         </div>
-                        <Button variant='none' className="add-cart d-flex align-items-center"><Cart className='me-1' /> Add</Button>
+                        <Button variant='none' className="add-cart d-flex align-items-center" onClick={()=>{addItem(allData)}}>
+                            <Cart className='me-1' /> Add
+                        </Button>
                     </div>
                 </div>
             </div>

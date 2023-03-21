@@ -1,0 +1,44 @@
+.add-con {
+  background: #def9ec;
+  border-radius: 20px;
+  .add-cart-crumb {
+    background-image: url("https://themepanthers.com/wp/nest/d1/wp-content/uploads/2022/02/banner-10-min.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 70px 80px;
+    border-radius: 20px;
+    h2 {
+      font-family: "Quicksand", sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: $blueGrey;
+    }
+    .about-crumb {
+      border-bottom: 0;
+      .container {
+        padding-left: 0;
+      }
+    }
+    .add-categories {
+      li {
+        a {
+          font-family: "Quicksand", sans-serif;
+          font-size: 12px;
+          font-weight: 700;
+          color: $green;
+          background-color: #fff;
+          border: 1px solid $borderGrey;
+          border-radius: 30px;
+          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+          padding: 10px 20px;
+          transition: .3s;
+          &:hover {
+            color: $yellow;
+          }
+        }
+      }
+    }
+  }
+}
