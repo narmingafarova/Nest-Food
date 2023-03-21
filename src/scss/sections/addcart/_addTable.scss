@@ -1,5 +1,5 @@
 .add-table {
-  table {
+  .shop-cart-items {
     thead {
       tr {
         background-color: #f4f6fa;
@@ -17,7 +17,7 @@
           border-radius: 20px 0 0 20px;
         }
         &:last-child {
-            border-radius: 0 20px 20px 0;
+          border-radius: 0 20px 20px 0;
         }
       }
     }
@@ -55,6 +55,50 @@
               color: #fff;
             }
           }
+          .quantity {
+            font-size: 16px;
+            font-weight: 700;
+            width: 90px;
+            height: 50px;
+            background: #fff;
+            border: 2px solid $green;
+            color: $green;
+            border-radius: 5px;
+            margin: 0 6px 15px 0;
+            padding: 10px 30px 10px 10px;
+          }
+          .input-btns {
+            top: 15px;
+            left: 75px;
+            button {
+              background-color: transparent;
+              border: none;
+            }
+            .btn:first-child:active,
+            :not(.btn-check) + .btn:active {
+              background-color: transparent;
+              border-color: transparent;
+            }
+          }
+          .coupon-update {
+            input {
+              font-family: "Lato", sans-serif;
+              font-size: 13px;
+              line-height: 1.15;
+              height: 40px;
+              border-radius: 5px;
+              padding: 0 15px;
+              border: 1px solid $borderGrey;
+              &:focus-visible {
+                outline: none;
+              }
+            }
+            .btn:first-child:active,
+            :not(.btn-check) + .btn:active {
+              background-color: $green;
+              border-color: transparent;
+            }
+          }
         }
       }
     }
@@ -63,4 +107,41 @@
       padding: 15px 20px;
     }
   }
+  .row {
+    h5 {
+      font-family: "Quicksand", sans-serif;
+      font-size: 20px;
+      line-height: 34px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+  }
+  .totals {
+    border-color: $borderGrey;
+    width: 50%;
+    tr {
+      td {
+        font-family: "Quicksand", sans-serif;
+        padding: 15px 20px;
+        &:first-child {
+          font-size: 15px;
+          font-weight: 700;
+          color: $blueGrey;
+          width: 40%;
+        }
+        &:last-child {
+          font-size: 14px;
+          font-weight: 500;
+          color: $green;
+        }
+      }
+    }
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
