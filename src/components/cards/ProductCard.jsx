@@ -1,12 +1,13 @@
 import { useState } from 'react'
-import { Button, Col } from 'react-bootstrap'
+import { Button, Col, NavLink } from 'react-bootstrap'
 import { Cart, Star } from 'react-bootstrap-icons'
 import { useCart } from 'react-use-cart'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { LinkContainer } from 'react-router-bootstrap';
 // import { ProductContext } from '../context/ProductContext'
 
-const ProductCard = ({ allData, frontImage, backImage, category, title, store, price, discount, flexVal, smValue, mdValue }) => {
+const ProductCard = ({ allData, id, frontImage, backImage, category, title, store, price, discount, flexVal, smValue, mdValue }) => {
     const [img, setImg] = useState(frontImage);
     const { addItem } = useCart();
 
@@ -37,7 +38,9 @@ const ProductCard = ({ allData, frontImage, backImage, category, title, store, p
                     <div className="product-details">
                         <a href='/' className='product-cat text-decoration-none'>{category}</a>
                         <h4 className='mt-1 mb-2'>
-                            <a href="/" className='text-decoration-none'>{title}</a>
+                            <LinkContainer to={`/${id}`}>
+                                <NavLink className='text-decoration-none'>{title}</NavLink>
+                            </LinkContainer>
                         </h4>
                         <div className="product-rate">
                             <ul className='d-flex justify-content-start align-items-center ps-0 mb-1'>

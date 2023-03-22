@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Calendar, Grid3x3Gap, ListUl } from "react-bootstrap-icons";
 import { ProductContext } from "../../context/ProductContext";
@@ -68,12 +68,22 @@ const ShopItems = () => {
         };
         setData(products);
         categories();
+
+        setTimeout(() => {
+            allRef.current.focus();
+        }, 1);
     }, [products]);
 
     const filterCategories = (category) => {
         const catItems = products.filter((item) => item.category === category);
-        setData(catItems);
+        if (catItems) {
+            setData(catItems);
+        } else {
+            setData(products);
+        }
     };
+
+    const allRef = useRef();
 
     return (
         <Container className="shop-items my-5">
@@ -82,7 +92,7 @@ const ShopItems = () => {
                     <div className="shoplist-btns d-flex mb-3">
                         <Button
                             className={`list-design d-flex justify-content-center align-items-center ${classname} me-2`}
-                            onClick={(e) => {
+                            onClick={() => {
                                 setColvalue(3);
                                 setFlexform("flex-column");
                                 if (prevBtn == null) {
@@ -96,7 +106,7 @@ const ShopItems = () => {
                         </Button>
                         <Button
                             className={`list-design d-flex justify-content-center align-items-center ${secClass}`}
-                            onClick={(e) => {
+                            onClick={() => {
                                 setColvalue(6);
                                 setFlexform("flex-row");
                                 if (prevBtn === 1) {
@@ -124,6 +134,7 @@ const ShopItems = () => {
                                     <ProductCard
                                         key={item.id}
                                         allData={item}
+                                        id={item.id}
                                         frontImage={item.image.imgFront}
                                         backImage={item.image.imgBack}
                                         category={item.category}
@@ -144,7 +155,18 @@ const ShopItems = () => {
                     <aside>
                         <h4>Category</h4>
                         <ul className="ps-0">
-                            <li className="position-relative list-unstyled mb-2 d-flex justify-content-between align-items-center">
+                            <li tabIndex="1" ref={allRef} className="position-relative list-unstyled mb-2 d-flex justify-content-center align-items-center">
+                                <div
+                                    className="pb-0 categories d-flex align-items-center"
+                                    onClick={() => setData(products)}
+                                >
+                                    <span className="ms-2">All</span>
+                                </div>
+                                <span className="itemCount text-center position-absolute">
+                                    {products.length}
+                                </span>
+                            </li>
+                            <li tabIndex="1" className="position-relative list-unstyled mb-2 d-flex justify-content-between align-items-center">
                                 <div
                                     className="pb-0 categories d-flex align-items-center"
                                     onClick={() => filterCategories("Baking material")}
@@ -160,7 +182,7 @@ const ShopItems = () => {
                                     {bmLength}
                                 </span>
                             </li>
-                            <li className="position-relative list-unstyled mb-2 d-flex justify-content-between align-items-center">
+                            <li tabIndex="1" className="position-relative list-unstyled mb-2 d-flex justify-content-between align-items-center">
                                 <div
                                     className="pb-0 categories d-flex align-items-center"
                                     onClick={() => filterCategories("Bread and Juice")}
@@ -176,7 +198,7 @@ const ShopItems = () => {
                                     {breadLength}
                                 </span>
                             </li>
-                            <li className="position-relative list-unstyled mb-2 d-flex justify-content-between align-items-center">
+                            <li tabIndex="1" className="position-relative list-unstyled mb-2 d-flex justify-content-between align-items-center">
                                 <div
                                     className="pb-0 categories d-flex align-items-center"
                                     onClick={() => filterCategories("Clothing & beauty")}
@@ -192,7 +214,7 @@ const ShopItems = () => {
                                     {cloLength}
                                 </span>
                             </li>
-                            <li className="position-relative list-unstyled mb-2 d-flex justify-content-between align-items-center">
+                            <li tabIndex="1" className="position-relative list-unstyled mb-2 d-flex justify-content-between align-items-center">
                                 <div
                                     className="pb-0 categories d-flex align-items-center"
                                     onClick={() => filterCategories("Deals Of The Day")}
@@ -208,7 +230,7 @@ const ShopItems = () => {
                                     {dealLength}
                                 </span>
                             </li>
-                            <li className="position-relative list-unstyled mb-2 d-flex justify-content-between align-items-center">
+                            <li tabIndex="1" className="position-relative list-unstyled mb-2 d-flex justify-content-between align-items-center">
                                 <div
                                     className="pb-0 categories d-flex align-items-center"
                                     onClick={() => filterCategories("Fresh Seafood")}
@@ -224,7 +246,7 @@ const ShopItems = () => {
                                     {seaLength}
                                 </span>
                             </li>
-                            <li className="position-relative list-unstyled mb-2 d-flex justify-content-between align-items-center">
+                            <li tabIndex="1" className="position-relative list-unstyled mb-2 d-flex justify-content-between align-items-center">
                                 <div
                                     className="pb-0 categories d-flex align-items-center"
                                     onClick={() => filterCategories("Milks and Dairies")}
@@ -240,7 +262,7 @@ const ShopItems = () => {
                                     {milkLength}
                                 </span>
                             </li>
-                            <li className="position-relative list-unstyled mb-2 d-flex justify-content-between align-items-center">
+                            <li tabIndex="1" className="position-relative list-unstyled mb-2 d-flex justify-content-between align-items-center">
                                 <div
                                     className="pb-0 categories d-flex align-items-center"
                                     onClick={() => filterCategories("Fresh Fruit")}
@@ -256,7 +278,7 @@ const ShopItems = () => {
                                     {fruitLength}
                                 </span>
                             </li>
-                            <li className="position-relative list-unstyled mb-2 d-flex justify-content-between align-items-center">
+                            <li tabIndex="1" className="position-relative list-unstyled mb-2 d-flex justify-content-between align-items-center">
                                 <div
                                     className="pb-0 categories d-flex align-items-center"
                                     onClick={() => filterCategories("Wines & Drinks")}
@@ -272,7 +294,7 @@ const ShopItems = () => {
                                     {wineLength}
                                 </span>
                             </li>
-                            <li className="position-relative list-unstyled d-flex justify-content-between align-items-center">
+                            <li tabIndex="1" className="position-relative list-unstyled d-flex justify-content-between align-items-center">
                                 <div
                                     className="pb-0 categories d-flex align-items-center"
                                     onClick={() => filterCategories("Uncategorized")}

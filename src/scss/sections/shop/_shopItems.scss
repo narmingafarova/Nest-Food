@@ -123,6 +123,7 @@
         line-height: 24px;
         color: $blueGrey;
         cursor: pointer;
+        transition: 0.3s;
       }
       .itemCount {
         font-size: 12px;
@@ -135,6 +136,19 @@
         background-color: $lightGreen;
         border-radius: 20px;
         margin-left: 5px;
+        transition: 0.3s;
+      }
+      &:focus {
+        .categories {
+          color: $green;
+        }
+        .itemCount {
+          color: #fff;
+          background-color: $green;
+        }
+      }
+      &:focus-visible {
+        outline: none;
       }
     }
   }

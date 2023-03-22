@@ -2,7 +2,7 @@ import { Container } from 'react-bootstrap';
 import { House } from 'react-bootstrap-icons';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
-function BreadCrumb({title}) {
+function BreadCrumb({title, category}) {
     return (
         <div className="about-crumb py-3 mb-2">
             <Container>

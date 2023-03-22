@@ -10,6 +10,7 @@ import Contact from './pages/Contact'
 import Shop from './pages/Shop'
 import Cart from './pages/Cart'
 import { CartProvider } from 'react-use-cart'
+import ProductDetails from './pages/ProductDetails'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
             <Route path='/about' element={<About />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/shop' element={<Shop />} />
+            <Route path="/:url" element={<ProductDetails />} />
             <Route path='/cart' element={<Cart />} />
           </Routes>
           <MainFooter />

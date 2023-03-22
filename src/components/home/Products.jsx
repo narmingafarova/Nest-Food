@@ -94,6 +94,7 @@ const Products = () => {
                 <ProductCard
                   key={item.id}
                   allData={item}
+                  id={item.id}
                   frontImage={item.image.imgFront}
                   backImage={item.image.imgBack}
                   category={item.category}
@@ -112,6 +113,7 @@ const Products = () => {
                 <ProductCard
                   key={item.id}
                   allData={item}
+                  id={item.id}
                   frontImage={item.image.imgFront}
                   backImage={item.image.imgBack}
                   category={item.category}
