@@ -101,6 +101,7 @@ const Products = () => {
                   store={item.store}
                   price={item.price.price}
                   discount={item.price.discount}
+                  flexVal={"flex-column"}
                   smValue={6}
                   mdValue={2}
                 />
@@ -118,6 +119,7 @@ const Products = () => {
                   store={item.store}
                   price={item.price.price}
                   discount={item.price.discount}
+                  flexVal={"flex-column"}
                   smValue={6}
                   mdValue={2}
                 />

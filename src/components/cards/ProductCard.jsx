@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import { ProductContext } from '../context/ProductContext'
 
-const ProductCard = ({ allData, frontImage, backImage, category, title, store, price, discount, smValue, mdValue }) => {
+const ProductCard = ({ allData, frontImage, backImage, category, title, store, price, discount, flexVal, smValue, mdValue }) => {
     const [img, setImg] = useState(frontImage);
     const { addItem } = useCart();
 
@@ -29,7 +29,7 @@ const ProductCard = ({ allData, frontImage, backImage, category, title, store, p
     return (
         <>
             <Col sm={smValue} md={mdValue}>
-                <div className='product-card h-100 py-3' onMouseEnter={() => { setImg(backImage) }} onMouseLeave={() => { setImg(frontImage) }}>
+                <div className={`product-card d-flex ${flexVal} h-100 py-3`} onMouseEnter={() => { setImg(backImage) }} onMouseLeave={() => { setImg(frontImage) }}>
                     <span className='sale-percent'>8%</span>
                     <div className="product-img text-center">
                         <img src={img} alt="product" width={160} />
