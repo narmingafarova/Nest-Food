@@ -1,0 +1,127 @@
+.shop-items {
+  @include productCard;
+  .product-card {
+    border: 1px solid $borderGrey;
+    border-radius: 15px;
+    transition: 0.5s;
+    img {
+      transition: 0.5s;
+      z-index: 1;
+    }
+    .sale-percent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 10px;
+      line-height: 1;
+      border-radius: 15px 0 20px;
+      padding: 10px 20px;
+      color: #fff;
+      background-color: $green;
+      z-index: 2;
+    }
+    .product-details {
+      .product-cat {
+        font-family: "Lato", sans-serif;
+        font-size: 9px;
+        color: #adadad;
+        transition: 0.5s;
+        &:hover {
+          color: $green;
+        }
+      }
+      .store {
+        font-family: "Lato", sans-serif;
+        font-size: 12px;
+        line-height: 26px;
+        color: #b6b6b6;
+        a {
+          color: $green;
+          transition: 0.5s;
+          &:hover {
+            color: $yellow;
+          }
+        }
+      }
+      .prices-add {
+        button {
+          font-size: 9px;
+          font-weight: 700;
+          border-radius: 4px;
+          color: $darkGreen;
+          background-color: #def9ec;
+          transition: 0.5s;
+          &:hover {
+            transform: translateY(-3px);
+          }
+        }
+      }
+    }
+    &:hover {
+      border: 1px solid $lightGreen;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+  aside {
+    font-family: "Quicksand", sans-serif;
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid $borderGrey;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+    h4 {
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.2;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      color: $blueGrey;
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.1px;
+        background-color: $lightGreen;
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        bottom: -2px;
+        left: 0;
+        width: 25%;
+        height: 2px;
+        background-color: $lightGreen;
+      }
+    }
+    li {
+      border-radius: 5px;
+      padding: 9px 67px 9px 10px;
+      border: 1px solid #f2f3f4;
+      .categories {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 24px;
+        color: $blueGrey;
+        cursor: pointer;
+      }
+      .itemCount {
+        font-size: 12px;
+        line-height: 24px;
+        min-width: 24px;
+        height: 24px;
+        right: 10px ;
+        top: 10px;
+        color: $blueGrey;
+        background-color: $lightGreen;
+        border-radius: 20px;
+        margin-left: 5px;
+      }
+    }
+  }
+}

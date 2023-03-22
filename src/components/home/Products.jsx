@@ -101,6 +101,8 @@ const Products = () => {
                   store={item.store}
                   price={item.price.price}
                   discount={item.price.discount}
+                  smValue={6}
+                  mdValue={2}
                 />
               );
             })
@@ -116,6 +118,8 @@ const Products = () => {
                   store={item.store}
                   price={item.price.price}
                   discount={item.price.discount}
+                  smValue={6}
+                  mdValue={2}
                 />
               );
             })}
