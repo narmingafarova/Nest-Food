@@ -1,12 +1,19 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Form, Col, Container, Row } from "react-bootstrap";
 import { Calendar, Grid3x3Gap, ListUl } from "react-bootstrap-icons";
 import { ProductContext } from "../../context/ProductContext";
 import ProductCard from "../cards/ProductCard";
+// import { SearchContext } from "../Header";
 
 const ShopItems = () => {
     const [products] = useContext(ProductContext);
+    // const searchKey = useContext(SearchContext);
 
+    // Searching
+    const [word, setWord] = useState("");
+    const [searchKey, setSearchkey] = useState("");
+
+    // List View
     const [data, setData] = useState(products);
     const [colValue, setColvalue] = useState(3);
     const [flexForm, setFlexform] = useState("flex-column");
@@ -71,7 +78,7 @@ const ShopItems = () => {
 
         setTimeout(() => {
             allRef.current.focus();
-        }, 1);
+        }, 1000);
     }, [products]);
 
     const filterCategories = (category) => {
@@ -83,12 +90,24 @@ const ShopItems = () => {
         }
     };
 
+    const formSubmit = (e) => {
+        e.preventDefault();
+        setSearchkey(word);
+    }
+
     const allRef = useRef();
 
     return (
         <Container className="shop-items my-5">
-            <Row>
+            <Row className="shop-row">
                 <Col sm={12} md={9}>
+                    <div className="search-bar d-flex justify-content-between align-items-center mb-4">
+                        <Form className="d-flex justify-content-between align-items-center mx-auto" onSubmit={formSubmit}>
+                            <Form.Control type="text" placeholder="Search for products..." className='border-0' value={word} onChange={(e) => setWord(e.target.value)} />
+                            <Button variant="success" type="submit">Search</Button>
+                        </Form>
+                        <Button variant="danger" className="reset-btn ms-4" onClick={() => { setSearchkey(""); setWord("") }}>Reset</Button>
+                    </div>
                     <div className="shoplist-btns d-flex mb-3">
                         <Button
                             className={`list-design d-flex justify-content-center align-items-center ${classname} me-2`}
@@ -120,18 +139,10 @@ const ShopItems = () => {
                         </Button>
                     </div>
                     <Row className="g-3">
-                        {data.length === 0 ? (
-                            <Container className="w-75 mx-auto mb-5">
-                                <div className="empty-cart mb-3 d-flex align-items-center justify-content-center">
-                                    <Calendar className="me-2" color="#3bb77e" />
-                                    Unfortunately, we currently do not have any products in this
-                                    category
-                                </div>
-                            </Container>
-                        ) : (
-                            data.map((item) => {
-                                return (
-                                    <ProductCard
+                        {
+                            searchKey ? (
+                                products.filter(value => value.title.toLocaleLowerCase().includes(searchKey)).map((item) => {
+                                    return <ProductCard
                                         key={item.id}
                                         allData={item}
                                         id={item.id}
@@ -146,9 +157,37 @@ const ShopItems = () => {
                                         smValue={12}
                                         mdValue={colValue}
                                     />
-                                );
-                            })
-                        )}
+                                })
+                            ) : (data.length === 0 ? (
+                                <Container className="w-75 mx-auto mb-5">
+                                    <div className="empty-cart mb-3 d-flex align-items-center justify-content-center">
+                                        <Calendar className="me-2" color="#3bb77e" />
+                                        Unfortunately, we currently do not have any products in this
+                                        category
+                                    </div>
+                                </Container>
+                            ) : (
+                                data.map((item) => {
+                                    return (
+                                        <ProductCard
+                                            key={item.id}
+                                            allData={item}
+                                            id={item.id}
+                                            frontImage={item.image.imgFront}
+                                            backImage={item.image.imgBack}
+                                            category={item.category}
+                                            title={item.title}
+                                            store={item.store}
+                                            price={item.price.price}
+                                            discount={item.price.discount}
+                                            flexVal={flexForm}
+                                            smValue={12}
+                                            mdValue={colValue}
+                                        />
+                                    );
+                                })
+                            ))
+                        }
                     </Row>
                 </Col>
                 <Col sm={12} md={3}>

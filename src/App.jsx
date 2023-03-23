@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Header from './components/Header'
+import { Header } from './components/Header'
 import TopHeader from './components/TopHeader'
 import { ProductProvider } from './context/ProductContext'
 import Home from './pages/Home'
@@ -17,17 +17,17 @@ const App = () => {
     <BrowserRouter>
       <CartProvider>
         <ProductProvider>
-          <TopHeader />
-          <Header />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/contact' element={<Contact />} />
-            <Route path='/shop' element={<Shop />} />
-            <Route path="/:url" element={<ProductDetails />} />
-            <Route path='/cart' element={<Cart />} />
-          </Routes>
-          <MainFooter />
+            <TopHeader />
+            <Header />
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/contact' element={<Contact />} />
+              <Route path='/shop' element={<Shop />} />
+              <Route path="/:url" element={<ProductDetails />} />
+              <Route path='/cart' element={<Cart />} />
+            </Routes>
+            <MainFooter />
         </ProductProvider>
       </CartProvider>
     </BrowserRouter>

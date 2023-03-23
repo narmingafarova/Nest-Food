@@ -21,7 +21,7 @@ const DaillySells = () => {
   useEffect(() => {
     setTimeout(() => {
       btnRef.current.click();
-    }, 1); 
+    }, 1000); 
   }, []);
 
   const btnRef = useRef();

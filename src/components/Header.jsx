@@ -7,9 +7,35 @@ import { Recycle, Heart, Cart, Person, ArrowRight, ChevronDown, Fire, Headset } 
 import appSvg from '../assets/img/apps.svg';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useCart } from 'react-use-cart';
+// import { useNavigate } from 'react-router-dom';
+// import { createContext, useState } from 'react';
 
-function Header() {
-    const {totalItems} = useCart();
+// export const SearchContext = createContext();
+
+// export const SearchProvider = () => {
+//     const [word, setWord] = useState("");
+//     const [searchKey, setSearchkey] = useState("");
+
+//     const navigate = useNavigate();
+
+//     const formSubmit = (e) => {
+//         e.preventDefault();
+//         navigate("/shop");
+//         setSearchkey(word);
+//     }
+//     return (
+//         <SearchContext.Provider value={searchKey}>
+//             <Form className="d-flex me-auto" onSubmit={formSubmit}>
+//                 <Form.Control type="text" placeholder="Search for products..." className='border-0' onChange={(e) => setWord(e.target.value)} />
+//                 <Button variant="success" type="submit">Search</Button>
+//             </Form>
+//         </SearchContext.Provider>
+//     )
+// }
+
+export function Header() {
+    const { totalItems } = useCart();
+
     return (
         <>
             <Navbar bg="white" expand="lg" className='header py-4'>
@@ -96,5 +122,3 @@ function Header() {
         </>
     );
 }
-
-export default Header;

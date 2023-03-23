@@ -37,3 +37,11 @@
     color: $lightGrey;
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .details {
+    .details-img {
+      justify-content: center !important;
+    }
+  }
+}
