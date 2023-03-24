@@ -10,7 +10,7 @@ export const ProductProvider = (props) => {
     // http://localhost:8080/foodsApi
     useEffect(() => {
         const comingData = async () => {
-            const fetchData = await axios.get("http://localhost:8080/foodsApi");
+            const fetchData = await axios.get("https://foods-api-4ids.onrender.com/foodsApi");
             setProducts(fetchData.data);
         }
         comingData();
