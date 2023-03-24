@@ -1,4 +1,5 @@
 // import { useState } from "react";
+// import { useRef, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Calendar, ChevronDown, ChevronUp } from "react-bootstrap-icons";
 import Table from "react-bootstrap/Table";
@@ -9,6 +10,12 @@ function AddTable() {
     const { items, updateItemQuantity, removeItem, isEmpty } = useCart();
     // const [quant, setQuant] = useState("");
     // const [price, setPrice] = useState("");
+
+    // let ref = useRef();
+    // const updateClick = (a, b) => {
+    //     const upVal = setPrice((a * b).toFixed(2));
+    //     ref.current = upVal;
+    // }
 
     return isEmpty ?
         (
