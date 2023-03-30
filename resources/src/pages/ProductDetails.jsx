@@ -28,7 +28,9 @@ const ProductDetails = () => {
     return (
         <>
             {!details ?
-                "Loading..."
+                <Container className='my-5 text-center'>
+                    <p>Loading...</p>
+                </Container>
                 :
                 <Container className='details my-5'>
                     <Row className='d-flex justify-content-center'>

@@ -7,10 +7,9 @@ export const ProductProvider = (props) => {
     const [products, setProducts] = useState([]);
 
     // https://foods-api-4ids.onrender.com/foodsApi
-    // http://localhost:8080/foodsApi
     useEffect(() => {
         const comingData = async () => {
-            const fetchData = await axios.get("https://foods-api-4ids.onrender.com/foodsApi");
+            const fetchData = await axios.get("https://mocki.io/v1/d453ab3a-aec9-48de-9d6c-6e186cabbe9d");
             setProducts(fetchData.data);
         }
         comingData();

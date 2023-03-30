@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Nest-Food/static/css/main.f6e810c6.css",
+    "main.js": "/Nest-Food/static/js/main.de557065.js",
+    "static/media/apps.svg": "/Nest-Food/static/media/apps.405ef79e462ec53a83669ac877d79ba0.svg",
+    "index.html": "/Nest-Food/index.html",
+    "main.f6e810c6.css.map": "/Nest-Food/static/css/main.f6e810c6.css.map",
+    "main.de557065.js.map": "/Nest-Food/static/js/main.de557065.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f6e810c6.css",
+    "static/js/main.de557065.js"
+  ]
+}

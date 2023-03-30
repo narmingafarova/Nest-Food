@@ -1,5 +1,3 @@
-// import { useState } from "react";
-// import { useRef, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Calendar, ChevronDown, ChevronUp } from "react-bootstrap-icons";
 import Table from "react-bootstrap/Table";
@@ -7,15 +5,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { useCart } from "react-use-cart";
 
 function AddTable() {
-    const { items, updateItemQuantity, removeItem, isEmpty } = useCart();
-    // const [quant, setQuant] = useState("");
-    // const [price, setPrice] = useState("");
-
-    // let ref = useRef();
-    // const updateClick = (a, b) => {
-    //     const upVal = setPrice((a * b).toFixed(2));
-    //     ref.current = upVal;
-    // }
+    const { items, updateItemQuantity, removeItem, isEmpty, cartTotal, totalItems } = useCart();
 
     return isEmpty ?
         (
@@ -72,7 +62,6 @@ function AddTable() {
                                         id="number"
                                         type="number"
                                         className="quantity text-center"
-                                        defaultValue={item.quantity}
                                         min="0"
                                         step="1"
                                         value={item.quantity}
@@ -129,11 +118,11 @@ function AddTable() {
                             <tbody>
                                 <tr>
                                     <td>Subtotal</td>
-                                    <td>100</td>
+                                    <td>{cartTotal}</td>
                                 </tr>
                                 <tr>
                                     <td>Total</td>
-                                    <td>100</td>
+                                    <td>{totalItems}</td>
                                 </tr>
                             </tbody>
                         </Table>

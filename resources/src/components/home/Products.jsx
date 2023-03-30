@@ -89,7 +89,7 @@ const Products = () => {
         </div>
         <Row className="gy-4">
           {data.length === 0
-            ? products.map((item) => {
+            ? products.slice(0, 12).map((item) => {
               return (
                 <ProductCard
                   key={item.id}
